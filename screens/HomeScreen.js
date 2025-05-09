@@ -8,11 +8,11 @@ export default function HomeScreen({ navigation }) {
 
       </View>
       <View style={styleBotones.container}>
-        <TouchableOpacity style={styleBotones.touch} onPress={() => navigation.navigate('Perfil')}>
-          <Text>Ir a Perfil</Text>
-        </TouchableOpacity>
         <TouchableOpacity style={styleBotones.touch} onPress={() => navigation.navigate('Noticias')}>
-          <Text>Ir a Noticias</Text>
+          <Text style={styleBotones.text}>Ir a Noticias</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styleBotones.touch} onPress={() => navigation.navigate('Perfil')}>
+          <Text style={styleBotones.text}>Ir a Perfil</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -24,12 +24,27 @@ const styleBotones = StyleSheet.create({
     position: "absolute",
     bottom: 50,
     flexDirection: "row",
-    gap: 40, // Solo funciona con versión de React Native >= 0.71
+    gap: 20,
   },
   touch: {
-    backgroundColor: 'white',
-    padding: 10,
-    borderRadius: 8,
+    backgroundColor: '#ffffff',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 5, // Sombra en Android
+    shadowColor: '#000', // Sombra en iOS
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 1, height: 2 },
+    shadowRadius: 4,
+    marginHorizontal: 10,
+  },
+  text: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#333',
   }
 });
+
 
